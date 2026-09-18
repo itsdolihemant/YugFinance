@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-gradient: linear-gradient(135deg, #f0f4fd 0%, #e2eafc 50%, #d7e3fc 100%);
+    --surface-glass: rgba(255, 255, 255, 0.72);
+    --surface-glass-card: rgba(255, 255, 255, 0.85);
+    --surface-glass-border: rgba(255, 255, 255, 0.8);
+    --surface-glass-subtle: rgba(255, 255, 255, 0.5);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --accent-primary: #2563eb;
+    --accent-glow: rgba(37, 99, 235, 0.2);
+    --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+  }
+
+  .dark {
+    --bg-gradient: linear-gradient(135deg, #090d16 0%, #0f172a 50%, #111b33 100%);
+    --surface-glass: rgba(15, 23, 42, 0.75);
+    --surface-glass-card: rgba(30, 41, 59, 0.82);
+    --surface-glass-border: rgba(255, 255, 255, 0.12);
+    --surface-glass-subtle: rgba(255, 255, 255, 0.06);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-primary: #38bdf8;
+    --accent-glow: rgba(56, 189, 248, 0.25);
+    --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 4px 12px -2px rgba(0, 0, 0, 0.3);
+  }
+
+  body {
+    background: var(--bg-gradient);
+    color: var(--text-primary);
+    min-height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+}
+
+/* Glass Prism utility classes */
+.glass-card {
+  background: var(--surface-glass-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--surface-glass-border);
+  box-shadow: var(--card-shadow);
+  border-radius: 1rem;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+}
+
+.glass-panel {
+  background: var(--surface-glass);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--surface-glass-border);
+}
+
+.glass-card-interactive:active {
+  transform: scale(0.985);
+}
+
+@media (hover: hover) {
+  .glass-card-interactive:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 34px -10px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Custom sleek scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.7);
+}
+
+/* Hidden balance blur */
+.blur-balance {
+  filter: blur(6px);
+  transition: filter 0.2s ease;
+}

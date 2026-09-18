@@ -1,0 +1,6 @@
+{
+  "name": "Yug Finance Manager 2.0",
+  "description": "100% offline personal finance and household expense manager with accounts, loans, debt, investments, household budgets, inventory, and goals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
